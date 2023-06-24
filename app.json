@@ -1,0 +1,117 @@
+{
+  "expo": {
+    "name": "Mytopia",
+    "slug": "mytopia",
+    "version": "1.1.5",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "mytopia",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "buildNumber": "119",
+      "supportsTablet": false,
+      "bundleIdentifier": "net.minuseins.mytopia",
+      "googleServicesFile": "./firebase-config/GoogleService-Info.plist",
+      "associatedDomains": ["applinks:mytopia.page.link"],
+      "infoPlist": {
+        "UIBackgroundModes": ["fetch", "remote-notification"],
+        "NSMotionUsageDescription": "Erlaube Mytopia Zugriff auf deine Aktivitätsdaten um an Schrittzähler-Aufgaben teilnehmen zu können und Punkte zu sammeln"
+      }
+    },
+    "android": {
+      "versionCode": 119,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptiveIcon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "mytopia.page.link",
+              "pathPrefix": "/records"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "mytopiaapp.page.link",
+              "pathPrefix": "/records"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      "package": "net.minuseins.mytopia",
+      "googleServicesFile": "./firebase-config/google-services.json",
+      "config": {
+        "googleMaps": {
+          "apiKey": "[REDACTED]"
+        }
+      },
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
+        "android.permission.ACTIVITY_RECOGNITION"
+      ],
+      "blockedPermissions": [
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-updates",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "expo-dev-client",
+      "expo-splash-screen",
+      "expo-system-ui",
+      "expo-sensors",
+      "expo-updates",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Erlaube Mytopia Standortzugriff um an GPS-basierten Aufgaben teilnehmen zu können und Punkte zu sammeln"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "[REDACTED]"
+      }
+    },
+    "owner": "phsuite",
+    "runtimeVersion": "1.0.1",
+    "updates": {
+      "url": "[REDACTED]",
+      "requestHeaders": {
+        "expo-channel-name": "production"
+      }
+    }
+  }
+}
